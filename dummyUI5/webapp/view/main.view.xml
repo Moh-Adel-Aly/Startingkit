@@ -1,0 +1,121 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" controllerName="dummyUI5.controller.main" displayBlock="true">
+  <App id="app">
+    <Page id="page">
+      <landmarkInfo>
+        <PageAccessibleLandmarkInfo rootRole="Region" rootLabel="{i18n>Welcome_rootLabel}" contentRole="Main" headerRole="Region"/>
+      </landmarkInfo>
+      <customHeader>
+        <Bar>
+          <contentMiddle>
+            <Title level="H2" text="{i18n>welcomeHeadline}"/>
+          </contentMiddle>
+          <contentRight>
+           <Title level="H2" text="Welcome Bob"/>
+            <Button icon="sap-icon://customer" press=".onAvatarPress"/>
+          </contentRight>
+        </Bar>
+      </customHeader>
+      <content>
+        <Panel id="panelViewed" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+          <headerToolbar>
+            <Toolbar>
+              <Title text="{i18n>firstProductTitle}" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+            </Toolbar>
+          </headerToolbar>
+          <l:BlockLayout background="Dashboard" >
+            <l:BlockLayoutRow content="{products>/Laptops}" accentCells="Accent1"  id="viewedRow">
+             <l:BlockLayoutCell class="sapUiContentPadding">
+              <Bar>
+              <contentLeft>
+                    <FlexBox  renderType="Bare">
+                      <l:VerticalLayout >
+                        <ObjectIdentifier title="{products>Name}" titleActive="true" titlePress=".onShowIcon" class="sapUiTinyMarginBottom sapUiSmallMarginBegin"/>
+                      </l:VerticalLayout>
+                    </FlexBox>
+                    </contentLeft>
+                    </Bar>
+                <FlexBox renderType="Bare" justifyContent="Center" height="20rem">
+                  <Image src="{products>PictureUrl}" width="100%" height="100%" press=".onSelectProduct"/>
+                </FlexBox>
+                <FlexBox
+				height="30px"
+				alignItems="Stretch"
+				justifyContent="End">
+                 <Button press="onShowIcon" tooltip="{i18n>addToCart}" width="75%" class="alignright sapMBtnIcon sapUiTinyMarginTop" icon="sap-icon://sys-add" type="Accept" id="btn_01"/>
+			</FlexBox>
+              </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+          </l:BlockLayout>
+        </Panel>
+        <Panel id="panelViewed01" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+          <headerToolbar>
+            <Toolbar>
+              <Title text="{i18n>secondProductTitle}" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+            </Toolbar>
+          </headerToolbar>
+          <l:BlockLayout background="Dashboard">
+            <l:BlockLayoutRow id="viewedRow01" content="{products>/Smartphones}">
+             <l:BlockLayoutCell class="sapUiContentPadding">
+              <Bar  class="sapUiTinyMarginBottom">
+              <contentLeft>
+                    <FlexBox  renderType="Bare">
+                      <l:VerticalLayout >
+                        <ObjectIdentifier title="{products>Name}" titleActive="true" titlePress=".onShowIcon" class="sapUiTinyMarginBottom sapUiSmallMarginBegin"/>
+                      </l:VerticalLayout>
+                    </FlexBox>
+                    </contentLeft>
+                    </Bar>
+                <FlexBox renderType="Bare" justifyContent="Center" height="20rem">
+                  <Image src="{products>PictureUrl}" width="100%" height="100%" press=".onSelectProduct"/>
+                </FlexBox>
+                <FlexBox
+				height="30px"
+				alignItems="Stretch"
+				justifyContent="End">
+                 <Button press="onShowIcon" tooltip="{i18n>addToCart}" width="75%" class="alignright sapMBtnIcon sapUiTinyMarginTop" icon="sap-icon://sys-add" type="Accept" id="btn_02"/>
+			</FlexBox>
+              </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+          </l:BlockLayout>
+        </Panel>
+        <Panel id="panelViewed03" accessibleRole="Region" backgroundDesign="Transparent">
+          <headerToolbar>
+            <Toolbar>
+              <Title text="{i18n>thirdProductTitle}" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+            </Toolbar>
+          </headerToolbar>
+          <l:BlockLayout background="Dashboard">
+            <l:BlockLayoutRow content="{products>/Headphones}">
+              <l:BlockLayoutCell class="sapUiContentPadding">
+              <Bar>
+              <contentLeft>
+                    <FlexBox  renderType="Bare">
+                      <l:VerticalLayout >
+                        <ObjectIdentifier title="{products>Name}" titleActive="true" titlePress=".onShowIcon" class="sapUiTinyMarginBottom sapUiSmallMarginBegin"/>
+                      </l:VerticalLayout>
+                    </FlexBox>
+                    </contentLeft>
+                    </Bar>
+                <FlexBox renderType="Bare" justifyContent="Center" height="20rem">
+                  <Image src="{products>PictureUrl}" width="100%" height="100%" press=".onSelectProduct"/>
+                </FlexBox>
+                <FlexBox
+				height="30px"
+				alignItems="Stretch"
+				justifyContent="End">
+                 <Button press="onShowIcon" tooltip="{i18n>addToCart}" width="75%" class="alignright sapMBtnIcon sapUiTinyMarginTop" icon="sap-icon://sys-add" type="Accept" id="btn_03"/>
+			</FlexBox>
+              </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+          </l:BlockLayout>
+        </Panel>
+      </content>
+      		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button type="Accept" text="Send Request" press="onSendRequest"/>
+			</OverflowToolbar>
+		</footer>
+    </Page>
+  </App>
+</mvc:View>
